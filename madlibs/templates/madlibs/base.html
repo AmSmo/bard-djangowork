@@ -1,0 +1,36 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link type="text/css" rel="stylesheet" href="{% static 'css/reset.css' %}">
+      <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Clicker+Script&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap" rel="stylesheet">
+      <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Bard with the Bard</title>
+  </head>
+  <body>
+  <header>
+    <nav>
+        <div class="left desktop">
+            <div class="location"><a href="{% url 'home' %}">Home</a></div>
+            <div class="location">Random Madlib</div>
+        </div>
+        <img class="shakes" src="{% static 'shakespeare2.png' %}">
+
+        <div class="right desktop">
+             <div class="location">Original Sonnets</div>
+             <div class="location">Sir Patrick Stewart</div>
+        </div>
+    </nav>
+  </header>
+
+        {% block 'body' %}
+
+        {% endblock %}
+
+  </body>
+</html>

@@ -1,0 +1,28 @@
+{% extends 'madlibs/base.html' %}
+{% block 'body' %}
+{% load static %}
+
+<div class="main">
+    <div class="title"> Bard with the Bard</div>
+    <div class="container">
+       <div role="img" alt="Globe Theater" class="globe-image"></div>
+            <div class="globe">
+                “Mind your speech a little lest you should mar your fortunes.”
+            </div>
+    </div>
+    <div class="explanation"><h2> What started off as boredom now is an interactive game.
+    Choose how many words you want to replace and if you want a random or specific sonnet.
+        Combinations are random, so even if you pick the same sonnet, it may replace different words.
+        Have fun.
+        <br>
+        Also this is inspired by Patrick Stewart so you will find a link to his elegant
+        readings in the corner.  </h2>
+    </div>
+    <form action="{% url 'marlib' %}" method="GET" >
+    {% csrf_token %}
+    {{ chooseform }}
+    </form>
+
+</div>
+
+{% endblock %}

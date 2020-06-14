@@ -1,0 +1,14 @@
+{% extends 'madlibs/base.html' %}
+{% block 'body' %}
+{% load static %}
+
+<div class="main">
+
+    <h6>{{ content }}</h6>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" name="run_script">Run script</button>
+</form>
+</div>
+
+{% endblock %}

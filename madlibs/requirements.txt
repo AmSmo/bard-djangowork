@@ -1,0 +1,5 @@
+nltk
+pyttsx3
+pyobjc
+gTTS
+pyglet
