@@ -1,0 +1,41 @@
+{% extends 'madlibs/base.html' %}
+{% block 'body' %}
+{% load static %}
+<div class="main">
+    <div class="why">
+        Here's some information you won't need to know. Unless you are actually looking at this to see what
+        I can do.
+    </div>
+    <ul>
+        <li>This site is started as part of a portfolio so it will be in development for a while, some details about that.</li>
+        <ol>
+            <li>The website is built on a django framework </li>
+            <li>The script is built in python, it was one of my first projects,
+                it started out as a command line game</li>
+            <li>I am open to any and all suggestions, the code is on github, I am self-taught so any advice
+                would be great.</li>
+            </ol>
+        <li>Here are some things I plan on working on to make this better</li>
+        <ol>
+            <li>Linking directly to Patrick Stewart once you choose a sonnet (working on a python
+            instagram scraper for that, so that may be a little while</li>
+            <li>Choosing accents for the voice in google</li>
+            <li>Try different Text to Speech Apps (pyttsx3 works perfectly locally but not in a web app)</li>
+            <li>Social Media posting</li>
+            <li>Interactivity with the sonnet to reveal the original words easily</li>
+            <li>Repeating the same sonnet in different voices
+                (due to gtts re-doing things may involve longer duration of temporary files)</li>
+            <li>Make your own madlibs to share</li>
+        </ol>
+        <li>Other projects I'm working on </li>
+            <ul>
+                <li>Art portfolio site for a friend</li>
+                <li>Camino de Santiago Social Media Platform</li>
+                <li>Recipe scaper/interactive models</li>
+                <li>Wordcount web app for scientific articles.  That's mostly done but I ran out of articles
+                to test properly, so if you have any of those please contact me, it's not pretty but
+                it's deployed at <a href="http://academiccount.appspot.com" target="_blank">Academic Count</a> </li>
+            </ul>
+    </ul>
+</div>
+{% endblock %}

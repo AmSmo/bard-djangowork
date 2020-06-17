@@ -46,11 +46,11 @@ nav .right {
 
 nav .location {
     padding: 0 15px;
-    
+        
 }
 
 nav a:hover {
-    color: red;
+    color: #404040;
     font-size: 20px;
     animation-direction: alternate;
     transition: all 200ms ease-in 10ms;
@@ -100,7 +100,7 @@ nav img:hover {
 }
 
 body {
-    background-image: url('../images/bg.png ');
+    background-image: url('../bg.png');
     background-size: contain;
     height: 100%;
     background-repeat: repeat;
@@ -275,4 +275,9 @@ body {
     .title{
         font-size: 22px;
     }
+}
+
+.main h6 {
+    font-size: 2rem;
+    
 }

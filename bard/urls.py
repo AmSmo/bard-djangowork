@@ -8,6 +8,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', madlibs.views.home,  name="home"),
     path('marlib/', madlibs.views.marlib, name="marlib"),
+    path(r'sonnet/<int:id>', madlibs.views.sonnet, name="sonnet"),
+    path('play/', madlibs.views.play, name="play"),
+    path('play/answer/', madlibs.views.answer, name="answer"),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

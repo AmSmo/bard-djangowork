@@ -1,0 +1,76 @@
+{% extends 'madlibs/base.html' %}
+{% block 'body' %}
+{% load static %}
+
+<div class="main">
+    {% if note %}
+    <div class="note">{{ note }}</div>
+    {% endif %}
+<h6>{{ duh }}</h6>
+
+    <form action="{% url 'answer' %}" method="POST">
+        {% csrf_token %}
+        <div class="choose"><h3>Choose your words wisely:</h3></div>
+        <div class="gaming">
+            <div class="field">
+                {% if gameform.nouns %}
+                    <div class="cat noun">
+                        <h2>Nouns</h2>
+                    {% for field in gameform.nouns %}
+                      <p class="row">{{ field.label }} {{ field }}</p>
+                    {% endfor %}
+                     </div>
+                {% endif %}
+
+                {% if gameform.verbs %}
+                    <div class="cat verb">
+                        <h2>Verbs</h2>
+                        {% for field in gameform.verbs %}
+                            <p class="row">{{ field.label }} {{ field }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                {% if gameform.adverbs %}
+                    <div class="cat adverb">
+                        <h2>Adverbs</h2>
+                        {% for field in gameform.adverbs %}
+                            <p class="row">{{ field.label }} {{ field }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                {% if gameform.adjectives %}
+                    <div class="cat adjective">
+                        <h2>Adjectives</h2>
+                        {% for field in gameform.adjectives %}
+                            <p class="row">{{ field.label }} {{ field }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                {% if gameform.verbeds %}
+                    <div class="cat verbed">
+                        <h2>Past Tense Verbs</h2>
+                        {% for field in gameform.verbeds %}
+                            <p class="row">{{ field.label }} {{ field }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                {% if gameform.plnouns %}
+                    <div class="cat plnoun">
+                        <h2>Plural Nouns</h2>
+                        {% for field in gameform.plnouns %}
+                            <p class="row">{{ field.label }} {{ field }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+            </div>
+        </div>
+    <input type="submit" value="Mind your Words" class="button">
+
+    </form>
+</div>
+{% endblock %}

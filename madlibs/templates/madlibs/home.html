@@ -18,9 +18,12 @@
         Also this is inspired by Patrick Stewart so you will find a link to his elegant
         readings in the corner.  </h2>
     </div>
-    <form action="{% url 'marlib' %}" method="GET" >
+    <form action="{% url 'play' %}" method="POST" >
     {% csrf_token %}
-    {{ chooseform }}
+    {% for field in chooseform %}
+        <p>{{ field.label }} {{ field }}</p>
+        {% endfor %}
+    <input type="submit" value="Mind your Words" class="button">
     </form>
 
 </div>

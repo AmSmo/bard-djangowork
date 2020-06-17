@@ -10,10 +10,11 @@ header {
     font-size: 1.2rem;
     height: 62px;
     position: fixed;
-    border-bottom: 1px solid #CC3333;
+    border-bottom: 1px solid #5d3418;
     width: 100%;
     z-index: 2;
     margin:0;
+    opacity: .9;
 }
 
 nav {
@@ -24,13 +25,18 @@ nav {
     align-items: center;
     
 }
-
+ 
 
 nav img {
 align-content: center;
 height:61px;
 width:auto;
 padding-top: 1px;
+}
+
+.main .note {
+    font-size: 22px;
+    padding-bottom: 15px;
 }
 
 nav .left,
@@ -46,11 +52,11 @@ nav .right {
 
 nav .location {
     padding: 0 15px;
-    
+
 }
 
 nav a:hover {
-    color: red;
+    color: #6b3c02;
     font-size: 20px;
     animation-direction: alternate;
     transition: all 200ms ease-in 10ms;
@@ -100,7 +106,7 @@ nav img:hover {
 }
 
 body {
-    background-image: url('../images/bg.png ');
+    background-image: url('../bg.png');
     background-size: contain;
     height: 100%;
     background-repeat: repeat;
@@ -109,7 +115,7 @@ body {
 
 .main {
     position:relative;
-    font-family: "La Belle Aurore", cursive;
+    font-family: cursive;
     top: 120px;
     color:#282828;
     text-align: center; 
@@ -120,7 +126,7 @@ body {
 .explanation {
     font-size: 2rem;
     line-height: 2.3rem;
-    color: #2f4f4f;
+    color: #5d3418;/* #5b3207; /*#2f4f4f;*/
     font-weight: 600;
     padding: 0 3rem;
     text-align: left;
@@ -280,4 +286,66 @@ body {
 .main h6 {
     font-size: 2rem;
     
+}
+
+.special{
+    justify-content: left;
+    height: 22px;
+    margin: 8px 10px;
+    width: 100px;
+    text-align: right;
+    border-radius: 5px;
+    text-shadow: bisque;
+    font-size: 18px;
+    background-color: burlywood;
+}
+
+.main .field{
+    font-size: 22px;
+    font-style: italic, bold;
+    display: flex;
+    width:100%;
+   
+}
+
+.main h3 {
+    font-size: 3rem;
+}
+
+
+.button {
+    border-radius: 5px;
+    height: 36px;
+    width: 200px;
+    font-family: cursive;
+    font-size: 22px;
+    background-color: burlywood;
+    box-shadow: #5d3418;
+    border: 1   px solid  #5d3418;
+    margin-bottom: 15px;
+    justify-content: center;
+    padding-top:0px;
+}
+
+.field {
+    display: flexbox;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    padding: 15px 15px;
+    flex-wrap: wrap;
+}
+
+.cat {
+    /* border: 1px solid #5d3418; */
+    margin: 10px 10px;
+}
+
+.field h2 {
+    /* background-color: burlywood; */
+    font-size: 2rem;
+    font-weight: 800;
+    padding-top: .8rem;
+    margin: 5px;
+    /* border: 1px solid #5d3418; */
 }
