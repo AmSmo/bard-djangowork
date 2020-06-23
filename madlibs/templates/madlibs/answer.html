@@ -2,13 +2,17 @@
 {% block 'body' %}
 {% load static %}
 
-<div class="main">
 
-    <h6>{{ content }}</h6>
+  {% csrf_token %}
+    <h6>{{ content }}</h6><br>
+    <h6> Working data uncleaned:<br><br>
 
-    {% csrf_token %}
-<!--    <audio src="../../tmp/temp.wav" controls></audio>-->
+        {{ duh }}
+    </h6>
 
-</div>
+
+    <audio src="../../tmp/temp.wav" controls></audio>
+
+
 
 {% endblock %}

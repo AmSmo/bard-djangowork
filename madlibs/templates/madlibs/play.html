@@ -2,12 +2,10 @@
 {% block 'body' %}
 {% load static %}
 
-<div class="main">
+
     {% if note %}
     <div class="note">{{ note }}</div>
     {% endif %}
-<h6>{{ duh }}</h6>
-
     <form action="{% url 'answer' %}" method="POST">
         {% csrf_token %}
         <div class="choose"><h3>Choose your words wisely:</h3></div>
@@ -72,5 +70,5 @@
     <input type="submit" value="Mind your Words" class="button">
 
     </form>
-</div>
+
 {% endblock %}

@@ -10,9 +10,11 @@
       <link href="https://fonts.googleapis.com/css2?family=Clicker+Script&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap" rel="stylesheet">
       <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}">
+
     <title>Bard with the Bard</title>
   </head>
   <body>
+
   <header>
     <nav>
         <div class="left desktop">
@@ -27,10 +29,19 @@
         </div>
     </nav>
   </header>
-
+    <div class="main">
         {% block 'body' %}
 
         {% endblock %}
 
+    <footer id="footer">
+
+            <a class="contact" href="mailto:adam.smolenski@gmail.com">Contact the Creator</a>
+            <a class="about" href="{% url 'about' %}">About the Creator</a>
+
+    </footer>
+     </div>
   </body>
+
+
 </html>

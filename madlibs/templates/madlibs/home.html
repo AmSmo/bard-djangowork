@@ -1,31 +1,47 @@
 {% extends 'madlibs/base.html' %}
 {% block 'body' %}
 {% load static %}
+<script>
+            function random() {
+                if (document.getElementById('id_random_1').checked) {
+                    document.getElementById('hidden').style.display = 'none';
+                } else {
+                    document.getElementById('hidden').style.display= 'block';
+                }
+            }
+        </script>
 
-<div class="main">
-    <div class="title"> Bard with the Bard</div>
+    <div class="title">
+        Bard with the Bard
+    </div>
     <div class="container">
-       <div role="img" alt="Globe Theater" class="globe-image"></div>
+       <div role="img" alt="Globe Theater" class="globe-image">
+       </div>
             <div class="globe">
                 “Mind your speech a little lest you should mar your fortunes.”
             </div>
     </div>
-    <div class="explanation"><h2> What started off as boredom now is an interactive game.
-    Choose how many words you want to replace and if you want a random or specific sonnet.
-        Combinations are random, so even if you pick the same sonnet, it may replace different words.
-        Have fun.
-        <br>
-        Also this is inspired by Patrick Stewart so you will find a link to his elegant
-        readings in the corner.  </h2>
+    <div class="explanation">
+        <h2>
+            What started off as boredom now is an interactive game.
+            Choose how many words you want to replace and if you want a random or specific sonnet.
+            Combinations are random, so even if you pick the same sonnet, it may replace different words.
+            Have fun.
+            <br>
+            Also this is inspired by Patrick Stewart so you will find a link to his elegant
+            readings in the corner.
+        </h2>
     </div>
-    <form action="{% url 'play' %}" method="POST" >
-    {% csrf_token %}
-    {% for field in chooseform %}
-        <p>{{ field.label }} {{ field }}</p>
-        {% endfor %}
-    <input type="submit" value="Mind your Words" class="button">
-    </form>
+    <div class="form">
+        <form action="{% url 'play' %}" method="POST" >
+            {% csrf_token %}
 
-</div>
+            <div> {{chooseform.random.label}} {{chooseform.random}}</div>
+            <div id="hidden">{{ chooseform.sonnet.label }}{{ chooseform.sonnet }}</div>
+            <div class="changes">{{ chooseform.changes.label }}{{ chooseform.changes }}</div>
+
+         <input type="submit" value="Mind your Words" class="button">
+        </form>
+    </div>
 
 {% endblock %}

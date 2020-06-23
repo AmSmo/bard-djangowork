@@ -1,41 +1,56 @@
 {% extends 'madlibs/base.html' %}
 {% block 'body' %}
 {% load static %}
-<div class="main">
-    <div class="why">
-        Here's some information you won't need to know. Unless you are actually looking at this to see what
-        I can do.
-    </div>
-    <ul>
-        <li>This site is started as part of a portfolio so it will be in development for a while, some details about that.</li>
-        <ol>
-            <li>The website is built on a django framework </li>
-            <li>The script is built in python, it was one of my first projects,
-                it started out as a command line game</li>
-            <li>I am open to any and all suggestions, the code is on github, I am self-taught so any advice
-                would be great.</li>
-            </ol>
-        <li>Here are some things I plan on working on to make this better</li>
-        <ol>
-            <li>Linking directly to Patrick Stewart once you choose a sonnet (working on a python
-            instagram scraper for that, so that may be a little while</li>
-            <li>Choosing accents for the voice in google</li>
-            <li>Try different Text to Speech Apps (pyttsx3 works perfectly locally but not in a web app)</li>
-            <li>Social Media posting</li>
-            <li>Interactivity with the sonnet to reveal the original words easily</li>
-            <li>Repeating the same sonnet in different voices
-                (due to gtts re-doing things may involve longer duration of temporary files)</li>
-            <li>Make your own madlibs to share</li>
-        </ol>
-        <li>Other projects I'm working on </li>
+    <div class="escape">
+        <img id="crayon" src="{% static 'me.jpg' %}" alt="Photo of me" >
+
+        <div class="me">
+        I'm a stagehand by trade.  Due to the current pandemic, I have been out of work since March 12th.
+        Maybe March 15th is when I started taking as many online coding courses as possible, mainly python.
+        Started learning data science but realized that wasn't for me after many courses.  I liked stats in college,
+        but I didn't find myself excited about projects.  Enter regular expressions.  I have a love of puns and word play,
+        so oddly regular expressions was interesting since you have to discover to find methods.  So here we are with my first,
+        project.  It was a lot of fun.  So I am continuing with projects like that, but with trying to make it a more readily
+        available game I discovered django.  That has also been an enjoyable experience to learn.  There are a lot
+        of moving parts and it's a puzzle I like to put together, so here we are.  Also that's a photo of me
+            enjoying the Crayola Factory (I'm color blind so it's extra ridiculous), one day I'll grow up.
+        </div>
+        <div class="why">
+            Here's some information you won't need to know. Unless you are actually looking at this to see what
+            I can do.
+        </div>
+        <div class="list">
             <ul>
-                <li>Art portfolio site for a friend</li>
-                <li>Camino de Santiago Social Media Platform</li>
-                <li>Recipe scaper/interactive models</li>
-                <li>Wordcount web app for scientific articles.  That's mostly done but I ran out of articles
-                to test properly, so if you have any of those please contact me, it's not pretty but
-                it's deployed at <a href="http://academiccount.appspot.com" target="_blank">Academic Count</a> </li>
+                <li>This site is started as part of a portfolio so it will be in development for a while, some details about that.</li>
+                <ol>
+                    <li>The website is built on a django framework </li>
+                    <li>The script is built in python, it was one of my first projects,
+                        it started out as a command line game</li>
+                    <li>I am open to any and all suggestions, the code is on github, I am self-taught so any advice
+                        would be great.</li>
+                    </ol>
+                <li>Here are some things I plan on working on to make this better</li>
+                <ol>
+                    <li>Linking directly to Patrick Stewart once you choose a sonnet (working on a python
+                    instagram scraper for that, so that may be a little while</li>
+                    <li>Choosing accents for the voice in google</li>
+                    <li>Try different Text to Speech Apps (pyttsx3 works perfectly locally but not in a web app)</li>
+                    <li>Social Media posting</li>
+                    <li>Interactivity with the sonnet to reveal the original words easily</li>
+                    <li>Repeating the same sonnet in different voices
+                        (due to gtts re-doing things may involve longer duration of temporary files)</li>
+                    <li>Make your own madlibs to share</li>
+                </ol>
+                <li>Other projects I'm working on </li>
+                    <ul>
+                        <li>Art portfolio site for a friend</li>
+                        <li>Camino de Santiago Social Media Platform</li>
+                        <li>Recipe scaper/interactive models</li>
+                        <li>Wordcount web app for scientific articles.  That's mostly done but I ran out of articles
+                        to test properly, so if you have any of those please contact me, it's not pretty but
+                        it's deployed at <a href="http://academiccount.appspot.com" target="_blank">Academic Count</a> </li>
+                    </ul>
             </ul>
-    </ul>
-</div>
+        </div>
+    </div>
 {% endblock %}

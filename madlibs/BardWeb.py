@@ -24,42 +24,56 @@ def sonnetize():
 
 class Sonnet:
     def __init__(self, num=0):
-        self.selection = specific_sonnet(num)
+        self.selection = WordSearch.specific_sonnet(num)
 
     def read_it_to_me(self):
         """
 
         :return: spoken text
         """
-        outloud= ('tmp/temp.wav')
+        outloud= ('/tmp/temp.wav')
         top= re.search("\n", self.selection)
-        tts = gTTS(text=self.selection[top.start():], lang='en-us')
+        tts = gTTS(text=self.selection[top.start():], lang='en-uk')
         tts.save(outloud)
 
-def specific_sonnet(num):
-    with open('static/new_sonnets.txt', 'r') as text:
-        sonnets = text.read()
-        sonnet=sonnets.split("AAA-")
-        if num == 0:
-            return (sonnet[random.randint(1, 154)])
-        else:
-            return(sonnet[num])
+
 
 
 class WordSearch:
     """ Initializes a sonnet into word parts, keeps an original and makes a duplicate to edit so you can compare at
 the end of all of it if you'd like"""
 
-    def __init__(self, sonnet):
-        self.original = sonnet
-        self.edited = sonnet
-        self.sonnet = sonnet.replace("\n", " ")
+    def __init__(self, num):
+        self.original = self.specific_sonnet(num)
+        self.edited = self.original
+        self.sonnet = self.original.replace("\n", " ")
         self.nouns = self.filter_nouns()
         self.plnouns = self.filter_plnouns()
         self.verbs = self.filter_verb()
         self.verbed = self.filter_verbed()
         self.adverb = self.filter_adverb()
         self.adjectives = self.filter_adjectives()
+
+    def read_it_to_me(self):
+        """
+
+        :return: spoken text
+        """
+        # outloud= ('/tmp/temp.wav')
+        top= re.search("\n", self.edited)
+        # tts =
+        return gTTS(text=self.edited[top.start():], lang='en-uk')
+        # tts.save(outloud)
+
+    def specific_sonnet(self, num):
+        with open('static/new_sonnets.txt', 'r') as text:
+            sonnets = text.read()
+            sonnet = sonnets.split("AAA-")
+            if num == 0:
+                self.randomed=random.randint(1, 154)
+                return (sonnet[self.randomed])
+            else:
+                return (sonnet[num])
 
     def selection(self, x):
         """
@@ -171,7 +185,7 @@ the end of all of it if you'd like"""
         :return: adverbs
         """
         adverbs=[]
-        nogo=['not', 'now', 'so', 'too', 'then', 'there', 'as', 'ever', 'very']
+        nogo=['not', 'now', 'so', 'too', 'then', 'there', 'as', 'ever', 'very', 'no', 'yours']
         for word, pos in nltk.pos_tag(nltk.word_tokenize(str(self.sonnet))):
             if (pos == 'RB'):
                 adverbs.append(word)
@@ -198,159 +212,103 @@ the end of all of it if you'd like"""
 
 
 
-def new_nouns():
-    """
+    def new_nouns(self, user_nouns):
+        """
 
-    :return: madlib updated with new nouns
-    """
-    user_nouns = []
-    word_change= []
-    if len(madlib.nouns) == 0:
-        pass
-    else:
-        for times in range(items[0]):
-            new_noun= input("Give me a noun: ")
-            user_nouns.append(new_noun)
-            x = (random.randint(0, len(madlib.nouns) - 1))
+        :return: madlib updated with new nouns
+        """
+        word_change= []
+        for times in range(len(user_nouns)):
+            x = (random.randint(0, len(self.nouns) - 1))
             while x in word_change:
-                x = (random.randint(0, len(madlib.nouns) - 1))
+                x = (random.randint(0, len(self.nouns) - 1))
             word_change.append(x)
         for index, word in enumerate(user_nouns):
-            old = madlib.nouns[word_change[index]]
-            madlib.edited = re.sub(rf'(\s){(old)}(\W)', f"\g<1>{word.upper()}\g<2>", madlib.edited, 1)
+            old = self.nouns[word_change[index]]
+            self.edited = re.sub(rf'(\s){(old)}(\W)', f"\g<1>{word.upper()}\g<2>", self.edited, 1)
             logging.debug(f"{old}: original noun, {word.upper()}, new noun")
 
-def new_verbs():
-    """
+    def new_verbs(self, user_verbs):
+        """
 
-    :return: madlib update with new verbs
-    """
-    user_verbs = []
-    word_change = []
-    if len(madlib.verbs) == 0:
-        pass
-    else:
-        for times in range(items[1]):
-            new_verb= input("Give me a verb: ")
-            user_verbs.append(new_verb)
-            x = (random.randint(0, len(madlib.verbs) - 1))
+        :return: madlib update with new verbs
+        """
+        word_change=[]
+        for times in range(len(user_verbs)):
+            x = (random.randint(0, len(self.verbs) - 1))
             while x in word_change:
-                x = (random.randint(0, len(madlib.verbs) - 1))
+                x = (random.randint(0, len(self.verbs) - 1))
             word_change.append(x)
         for index, word in enumerate(user_verbs):
-            old = madlib.verbs[word_change[index]]
-            madlib.edited = re.sub(rf'(\s){(old)}(\W)', f"\g<1>{word.upper()}\g<2>", madlib.edited, 1)
+            old = self.verbs[word_change[index]]
+            self.edited = re.sub(rf'(\s){(old)}(\W)', f"\g<1>{word.upper()}\g<2>", self.edited, 1)
             logging.debug(f"{old}: original verb, {word.upper()}, new verb")
 
 
-def new_adverbs():
-    """
+    def new_adverbs(self, user_adverbs):
+        """
 
-    :return: madlib updated with user adverbs
-    """
-    user_adverbs = []
-    word_change = []
-    if len(madlib.adverb) == 0:
-        pass
-    else:
-        for times in range(items[2]):
-            new_adverb= input("Give me an adverb: ")
-            user_adverbs.append(new_adverb)
-            x = (random.randint(0, len(madlib.adverb) - 1))
+        :return: madlib updated with user adverbs
+        """
+        word_change=[]
+        for times in range(len(user_adverbs)):
+            x = (random.randint(0, len(self.adverb) - 1))
             while x in word_change:
-                x = (random.randint(0, len(madlib.adverb) - 1))
+                x = (random.randint(0, len(self.adverb) - 1))
             word_change.append(x)
         for index, word in enumerate(user_adverbs):
-            old = madlib.adverb[word_change[index]]
-            madlib.edited = re.sub(rf'(\s){(old)}(\W)', f"\g<1>{word.upper()}\g<2>", madlib.edited, 1)
+            old = self.adverb[word_change[index]]
+            self.edited = re.sub(rf'(\s){(old)}(\W)', f"\g<1>{word.upper()}\g<2>", self.edited, 1)
             logging.debug(f"{old}: original adverb, {word.upper()}, new adverb")
 
-def new_adjectives():
-    """
+    def new_adjectives(self, user_adjectives):
+        """
 
-    :return: madlib updated with new adjectives
-    """
-    user_adjectives = []
-    word_change = []
-    if len(madlib.adjectives) == 0:
-        pass
-    else:
-        for times in range(items[3]):
-            new_adjectives= input("Give me an adjective: ")
-            user_adjectives.append(new_adjectives)
-            x = (random.randint(0, len(madlib.adjectives) - 1))
+        :return: madlib updated with new adjectives
+        """
+        word_change=[]
+        for times in range(len(user_adjectives)):
+
+            x = (random.randint(0, len(self.adjectives) - 1))
             while x in word_change:
-                x = (random.randint(0, len(madlib.adjectives) - 1))
+                x = (random.randint(0, len(self.adjectives) - 1))
             word_change.append(x)
         for index, word in enumerate(user_adjectives):
-            old = madlib.adjectives[word_change[index]]
-            madlib.edited = re.sub(rf'(\s){(old)}(\W)', f"\g<1>{word.upper()}\g<2>", madlib.edited, 1)
+            old = self.adjectives[word_change[index]]
+            self.edited = re.sub(rf'(\s){(old)}(\W)', f"\g<1>{word.upper()}\g<2>", self.edited, 1)
             logging.debug(f"{old}: original adjective, {word.upper()}, new adjective")
 
-def new_verbed():
-    """
+    def new_verbed(self, user_verbed):
+        """
 
-    :return: madlib updated with new past tense verbs
-    """
-    user_verbed = []
-    word_change = []
-    if len(madlib.verbed) == 0:
-        pass
+        :return: madlib updated with new past tense verbs
+        """
 
-    else:
-        for times in range(items[4]):
-            new_verbd = input("Give me past tense verb: ")
-            user_verbed.append(new_verbd)
-            x = (random.randint(0, len(madlib.verbed)-1))
+        word_change = []
+        for times in range(len(user_verbed)):
+            x = (random.randint(0, len(self.verbed)-1))
             while x in word_change:
-                x = (random.randint(0, len(madlib.verbed)-1))
+                x = (random.randint(0, len(self.verbed)-1))
             word_change.append(x)
         for index, word in enumerate(user_verbed):
-            old = madlib.verbed[word_change[index]]
-            madlib.edited = re.sub(rf'(\s){(old)}(\W)', f"\g<1>{word.upper()}\g<2>", madlib.edited, 1)
+            old = self.verbed[word_change[index]]
+            self.edited = re.sub(rf'(\s){(old)}(\W)', f"\g<1>{word.upper()}\g<2>", self.edited, 1)
             logging.debug(f"{old}: original past tense verb, {word.upper()}, new past tense verb")
 
-def new_plnouns():
-    """
+    def new_plnouns(self, user_plnouns):
+        """
 
-    :return: madlib updated with new plural nouns
-    """
-    user_plnouns = []
-    word_change= []
-    if len(madlib.plnouns) == 0:
-        pass
-    else:
-        for times in range(items[5]):
-            new_plnoun= input("Give me a plural noun: ")
-            user_plnouns.append(new_plnoun)
-            x = (random.randint(0, len(madlib.plnouns)))
+        :return: madlib updated with new plural nouns
+        """
+        word_change = []
+
+        for times in range(len(user_plnouns)):
+            x = (random.randint(0, len(self.plnouns)-1))
             while x in word_change:
-                x = (random.randint(0, len(madlib.plnouns)-1))
+                x = (random.randint(0, len(self.plnouns)-1))
             word_change.append(x)
         for index, word in enumerate(user_plnouns):
-            old = madlib.plnouns[word_change[index]]
-            madlib.edited = re.sub(rf'(\s){(old)}(\W)', f"\g<1>{word.upper()}\g<2>", madlib.edited, 1)
+            old = self.plnouns[word_change[index]]
+            self.edited = re.sub(rf'(\s){(old)}(\W)', f"\g<1>{word.upper()}\g<2>", self.edited, 1)
             logging.debug(f"{old}: original plural noun, {word.upper()}, new plural noun")
 
-def game():
-
-    new_nouns()
-    new_verbs()
-    new_adverbs()
-    new_adjectives()
-    new_verbed()
-    new_plnouns()
-    print(madlib.edited)
-
-
-
-
-# madlib = start()
-# user_num = 0
-# while user_num == 0:
-#     user_num = changes()
-# items = format_to_change(user_num)
-# new_sonnet= madlib.original
-# game()
-# read_it_to_me()
-# finale()
