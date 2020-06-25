@@ -1,1 +1,1 @@
-web: gunicorn --bind 0.0.0.0:$PORT bard.wsgi:application --log-file=-
+web: gunicorn --bind 0.0.0.0:$PORT bard/wsgi:application --log-file=-
