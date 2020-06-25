@@ -1,7 +1,14 @@
 /* Nav Bar */
-body,html {
-    height: 100%;
+body,
+html {
+    margin: 0;
+    min-height: 100%;
+    height:100%;
 }
+body {
+    position: relative;
+}
+
 header {
     background-color: #EBD5B3;
     font-family: Zapfino, "Clicker Script", cursive;
@@ -10,27 +17,37 @@ header {
     font-size: 1.2rem;
     height: 62px;
     position: fixed;
-    border-bottom: 1px solid #CC3333;
-    width: 100%;
+    border-bottom: 1px solid #5d3418;
+    min-width: 100%;
+    width: auto;
     z-index: 2;
     margin:0;
+    opacity: .9;
+    
 }
 
 nav {
     height:62px;
     display:inline-flex;
-    width: 100%;
+    min-width: 100%;
+    width:auto;
     justify-content: space-around;
     align-items: center;
     
 }
-
+ 
 
 nav img {
 align-content: center;
 height:61px;
 width:auto;
 padding-top: 1px;
+}
+
+.main .note {
+    font-size: 22px;
+    padding-bottom: 15px;
+
 }
 
 nav .left,
@@ -46,11 +63,11 @@ nav .right {
 
 nav .location {
     padding: 0 15px;
-        
+
 }
 
 nav a:hover {
-    color: #404040;
+    color: #6b3c02;
     font-size: 20px;
     animation-direction: alternate;
     transition: all 200ms ease-in 10ms;
@@ -102,25 +119,28 @@ nav img:hover {
 body {
     background-image: url('../bg.png');
     background-size: contain;
-    height: 100%;
     background-repeat: repeat;
 }
 
 
 .main {
-    position:relative;
-    font-family: "La Belle Aurore", cursive;
+    position: relative;
+    font-family: cursive;
     top: 120px;
     color:#282828;
     text-align: center; 
     display: block;
+    padding-bottom: 10px;
+    min-height:100%;
+    padding: 0 20px;
+    
     
 }
 
 .explanation {
     font-size: 2rem;
     line-height: 2.3rem;
-    color: #2f4f4f;
+    color: #5d3418;/* #5b3207; /*#2f4f4f;*/
     font-weight: 600;
     padding: 0 3rem;
     text-align: left;
@@ -147,6 +167,7 @@ body {
     background-position: bottom;
     height: 320px;
     max-width: 100%;
+    width: auto;
     display:block;
     background-repeat: no-repeat;
     background-size: contain;
@@ -159,6 +180,7 @@ body {
     font-weight: 900;
     font-size: 25px;
     max-width: 100%;
+    width: auto;
     padding-top:20px;      
 }
 
@@ -171,6 +193,7 @@ body {
     .main {
         top:96px;
         display: block;
+        
     }
 
     .container {
@@ -192,6 +215,8 @@ body {
 
     .main {
         top:112 px;
+        padding: 0 8px;
+        padding-bottom: 30px;
     }
 
     .container {
@@ -250,9 +275,10 @@ body {
 }
 
 
-@media only screen and (max-width:380px){
+@media only screen and (max-width:420px){
     .main{
         top:72px;
+        padding: 3px;
     }
     .explanation {
         font-size: 1rem;
@@ -280,4 +306,150 @@ body {
 .main h6 {
     font-size: 2rem;
     
+}
+
+.special{
+    justify-content: left;
+    height: 22px;
+    margin: 8px 10px;
+    width: 100px;
+    text-align: right;
+    border-radius: 5px;
+    text-shadow: bisque;
+    font-size: 18px;
+    background-color: burlywood;
+}
+
+.main .field{
+    font-size: 22px;
+    font-style: italic, bold;
+    display: flex;
+    width:100%;
+   
+}
+
+.main h3 {
+    font-size: 3rem;
+}
+
+
+.button {
+    border-radius: 5px;
+    height: 36px;
+    width: 200px;
+    font-family: cursive;
+    font-size: 22px;
+    background-color: burlywood;
+    box-shadow: #5d3418;
+    border: 1px solid  #5d3418;
+    margin-bottom: 15px;
+    justify-content: center;
+    padding-top:0px;
+}
+
+.field {
+    display: flexbox;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    padding: 15px 15px;
+    flex-wrap: wrap;
+}
+
+.cat {
+    /* border: 1px solid #5d3418; */
+    padding: 10px 10px;
+}
+
+.field h2 {
+    /* background-color: burlywood; */
+    font-size: 2rem;
+    font-weight: 800;
+    padding-top: .8rem;
+    margin: 5px;
+    /* border: 1px solid #5d3418; */
+}
+
+#footer {
+    background-color: #EBD5B3;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 900;
+    color: #303030;
+    font-size: 0.8rem;
+    height: 12px;
+    border-top: 1px solid #5d3418;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-top:20px;
+}
+
+.escape {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.60rem;
+    padding: 0 3rem;
+    text-align: center;
+    padding-bottom:40px;
+    height: auto;
+    line-height: 2rem;
+    justify-items: left;
+}
+
+.escape ul{
+    font-size: 1.5rem;
+    list-style-position: inside;
+    list-style-type: disc;
+    justify-self: left;
+    text-align: left;   
+}
+
+.why {
+    font-size: 1.4rem;
+    padding-top: 3rem;
+}
+
+.escape li {
+    font-size: 1.25rem;
+    text-align: center;
+    list-style-position: inside;
+    text-align: left;
+}
+.escape ol{
+    font-size: 1.5rem;
+    list-style-position: inside;
+    list-style: decimal;
+    justify-self: left; 
+    text-align: left;
+    padding-left: 5rem;
+}
+.contact {
+    float: left;
+    padding-left:8px;
+}
+
+
+.about {
+    float: right;
+    padding-right:8px;
+}
+
+
+.form {
+    padding: 5px 5px;
+    width: 100%;
+    display: block;
+    font-size: 1.3rem;
+    
+}
+
+#crayon {
+    padding-bottom: 30px;
+    height: 320px;
+    width: auto;
+}
+
+#hidden {
+    display:none;
 }

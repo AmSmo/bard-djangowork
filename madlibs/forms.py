@@ -5,7 +5,7 @@ from .models import Sonnet
 class ChooseForm(forms.Form):
     random = forms.ChoiceField(widget=forms.RadioSelect,
                                choices=[('random', 'Random'), ('spec', 'Specific Sonnet')], label="Random or Not:")
-    random.widget.attrs.update({'onchange': 'random()'})
+    random.widget.attrs.update({'onchange': "check()"})
     sonnet = forms.IntegerField(max_value=154, min_value= 1,
                                 label="Which sonnet would you choose?", initial=1)
     changes = forms.IntegerField(max_value=30, min_value=15,

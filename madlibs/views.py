@@ -39,7 +39,10 @@ def play(request):
     if request.method == 'POST':
         filled_form = ChooseForm(request.POST)
         if filled_form.is_valid():
-            choice= int(filled_form.cleaned_data["sonnet"])
+            if filled_form.cleaned_data["random"]:
+                choice = 0
+            else:
+                choice= int(filled_form.cleaned_data["sonnet"])
             game_on = BW.WordSearch(choice)
             user_num= int(filled_form.cleaned_data["changes"])
             word_per_category = game_on.format_to_change(user_num)
