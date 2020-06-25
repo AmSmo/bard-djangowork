@@ -12,6 +12,7 @@ Jinja2==2.11.2
 MarkupSafe==1.1.1
 nltk==3.4.5
 Pillow==7.0.0
+psycopg2-binary==2.8.5
 pytz==2019.3
 requests==2.24.0
 six==1.15.0
