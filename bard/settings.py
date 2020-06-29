@@ -74,15 +74,15 @@ WSGI_APPLICATION = 'bard.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-if 'RDS_DB_NAME' in os.environ:
+if os.getenv('GAE_APPLICATION', None):
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': os.environ['RDS_DB_NAME'],
-            'USER': os.environ['RDS_USERNAME'],
-            'PASSWORD': os.environ['RDS_PASSWORD'],
-            'HOST': os.environ['RDS_HOSTNAME'],
-            'PORT': os.environ['RDS_PORT'],
+            'NAME': 'bard',
+            # 'USER': os.environ['RDS_USERNAME'],
+            # 'PASSWORD': os.environ['RDS_PASSWORD'],
+            'HOST': '/cloudsql/bard',
+            # 'PORT': os.environ['RDS_PORT'],
         }
     }
 else:
