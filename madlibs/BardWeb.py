@@ -1,5 +1,5 @@
 import random
-import nltk
+from nltk import pos_tag, word_tokenize
 from gtts import gTTS
 import os
 import re
