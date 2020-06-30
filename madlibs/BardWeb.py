@@ -2,11 +2,13 @@ import random
 from nltk import pos_tag as pos_t
 from nltk import word_tokenize as w_token
 from gtts import gTTS
+from nltk import data as something
 import os
 import re
 import logging
 from django.core.files.temp import NamedTemporaryFile
-
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+something.path.append(BASE_DIR + '/nltk_data')
 
 logging.basicConfig(level=logging.DEBUG, format="%(asctime)s - %(levelname)s - %(message)s")
 logging.disable(logging.DEBUG)
