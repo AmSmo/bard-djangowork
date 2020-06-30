@@ -78,7 +78,7 @@ if os.getenv('GAE_APPLICATION', None):
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'HOST': '/cloudsql/bard-280613:us-east1:bard',
+            'HOST': '/cloudsql/bardwithbard:us-east1:bard',
             'NAME': 'bard',
             'USER': 'root',
             'PASSWORD': 'bard1234django',
