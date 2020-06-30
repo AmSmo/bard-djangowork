@@ -77,12 +77,12 @@ WSGI_APPLICATION = 'bard.wsgi.application'
 if os.getenv('GAE_APPLICATION', None):
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'bard',
-            # 'USER': os.environ['RDS_USERNAME'],
-            # 'PASSWORD': os.environ['RDS_PASSWORD'],
-            'HOST': '/cloudsql/bard',
-            # 'PORT': os.environ['RDS_PORT'],
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            # # 'USER': os.environ['RDS_USERNAME'],
+            # # 'PASSWORD': os.environ['RDS_PASSWORD'],
+            # 'HOST': '/cloudsql/bard',
+            # # 'PORT': os.environ['RDS_PORT'],
         }
     }
 else:
