@@ -83,7 +83,7 @@ if os.getenv('GAE_APPLICATION', None):
             'USER': 'bard',
             'PASSWORD': 'bard1234django',
             # 'HOST': '/cloudsql/bard',
-            # # 'PORT': os.environ['RDS_PORT'],
+            'PORT': '3306',
         }
     }
 else:
