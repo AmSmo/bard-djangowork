@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '_&lc9ij7#n84=%r*qu_5zt=09q9bav1j94-_6n9!d&3*(+of3!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', "192.168.1.160",  "bard-280613.dt.r.appspot.com", ]
+ALLOWED_HOSTS = ['localhost', "192.168.1.160",  "bardwithbard.ue.r.appspot.com", ]
 
 
 # Application definition
@@ -78,9 +78,9 @@ if os.getenv('GAE_APPLICATION', None):
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'HOST': '/cloudsql/ bard-280613:us-east1:bard',
+            'HOST': '/cloudsql/bard-280613:us-east1:bard',
             'NAME': 'bard',
-            'USER': 'bard-django',
+            'USER': 'root',
             'PASSWORD': 'bard1234django',
             # 'HOST': '/cloudsql/bard',
             # # 'PORT': os.environ['RDS_PORT'],
@@ -89,8 +89,11 @@ if os.getenv('GAE_APPLICATION', None):
 else:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': os.path.join(BASE_DIR, 'db.mysql'),
+            'NAME': 'bard',
+            'USER': 'root',
+            'PASSWORD': 'bard1234django',
         }
     }
 
