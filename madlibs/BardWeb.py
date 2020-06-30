@@ -1,5 +1,6 @@
 import random
-from nltk import pos_tag, word_tokenize
+from nltk import pos_tag as nltk.post_tag
+from nltk import word_tokenize as nltk.word_tokenize
 from gtts import gTTS
 import os
 import re
