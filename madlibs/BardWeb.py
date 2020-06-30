@@ -1,6 +1,6 @@
 import random
-from nltk import pos_tag as nltk.post_tag
-from nltk import word_tokenize as nltk.word_tokenize
+from nltk import pos_tag as pos_t
+from nltk import word_tokenize as w_token
 from gtts import gTTS
 import os
 import re
@@ -144,7 +144,7 @@ the end of all of it if you'd like"""
         :return: nouns
         """
         nouns = []
-        for word, pos in nltk.pos_tag(nltk.word_tokenize(str(self.sonnet))):
+        for word, pos in pos_t(w_token(str(self.sonnet))):
             if (pos == 'NN'):
                 nouns.append(word)
         return(nouns[1:])
@@ -155,7 +155,7 @@ the end of all of it if you'd like"""
         :return: Plural nouns
         """
         plnouns=[]
-        for word, pos in nltk.pos_tag(nltk.word_tokenize(str(self.sonnet))):
+        for word, pos in pos_t(w_token(str(self.sonnet))):
             if (pos == 'NNS'):
                 plnouns.append(word)
         return plnouns
@@ -165,7 +165,7 @@ the end of all of it if you'd like"""
         :return: List of verbs
         """
         verbs=[]
-        for word, pos in nltk.pos_tag(nltk.word_tokenize(str(self.sonnet))):
+        for word, pos in pos_t(w_token(str(self.sonnet))):
             if (pos == 'VB'):
                 verbs.append(word)
         return verbs
@@ -175,7 +175,7 @@ the end of all of it if you'd like"""
         :return: list of past tense verbs
         """
         verbed=[]
-        for word, pos in nltk.pos_tag(nltk.word_tokenize(str(self.sonnet))):
+        for word, pos in pos_t(w_token(str(self.sonnet))):
             if (pos == 'VBD'):
                 verbed.append(word)
         return verbed
@@ -187,7 +187,7 @@ the end of all of it if you'd like"""
         """
         adverbs=[]
         nogo=['not', 'now', 'so', 'too', 'then', 'there', 'as', 'ever', 'very', 'no', 'yours']
-        for word, pos in nltk.pos_tag(nltk.word_tokenize(str(self.sonnet))):
+        for word, pos in pos_t(w_token(str(self.sonnet))):
             if (pos == 'RB'):
                 adverbs.append(word)
 
@@ -203,7 +203,7 @@ the end of all of it if you'd like"""
         """
         adjectives=[]
         nogo=["thee","though","thy","thine"]
-        for word, pos in nltk.pos_tag(nltk.word_tokenize(str(self.sonnet))):
+        for word, pos in pos_t(w_token(str(self.sonnet))):
             if (pos == 'JJ') and word not in nogo:
                 adjectives.append(word)
 
