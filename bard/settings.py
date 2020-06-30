@@ -90,7 +90,8 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'HOST': os.path.join(BASE_DIR, 'db.mysql'),
+            'HOST': '127.0.0.1',
+            # 'PORT': '3306',
             'NAME': 'bard',
             'USER': 'root',
             'PASSWORD': 'bard1234django',
