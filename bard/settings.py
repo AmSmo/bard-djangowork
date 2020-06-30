@@ -80,7 +80,7 @@ if os.getenv('GAE_APPLICATION', None):
             'ENGINE': 'django.db.backends.mysql',
             'HOST': '/cloudsql/bardwithbard:us-east1:bard',
             'NAME': 'bard',
-            'USER': 'root',
+            'USER': 'bard',
             'PASSWORD': 'bard1234django',
             # 'HOST': '/cloudsql/bard',
             # # 'PORT': os.environ['RDS_PORT'],
@@ -91,10 +91,10 @@ else:
         'default': {
             'ENGINE': 'django.db.backends.mysql',
             'HOST': '127.0.0.1',
-            # 'PORT': '3306',
+            'PORT': '3306',
             'NAME': 'bard',
             'USER': 'root',
-            'PASSWORD': 'bard1234django',
+            'PASSWORD': '',
         }
     }
 
