@@ -80,12 +80,12 @@ if os.getenv('GAE_APPLICATION', None):
             # 'ENGINE': 'django.db.backends.sqlite3',
             # 'NAME': 'db.sqlite3',
             'ENGINE': 'django.db.backends.postgresql',
-            'HOST': '/cloudsql/bardwithbard:us-east1:bard',
-            'NAME': 'bard',
-            'USER': 'postgres',
+            'HOST': '/cloudsql/bardwithbard:us-east1:bardwithbard',
+            'NAME': 'bardwithbard',
+            'USER': 'bard',
             'PASSWORD': 'bard1234django',
             # 'HOST': '/cloudsql/bard',
-            'PORT': '3306',
+            'PORT': '5432',
         }
     }
 else:
