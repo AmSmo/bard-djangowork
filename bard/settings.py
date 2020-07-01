@@ -77,10 +77,12 @@ WSGI_APPLICATION = 'bard.wsgi.application'
 if os.getenv('GAE_APPLICATION', None):
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.mysql',
+            # 'ENGINE': 'django.db.backends.sqlite3',
+            # 'NAME': 'db.sqlite3',
+            'ENGINE': 'django.db.backends.postgresql',
             'HOST': '/cloudsql/bardwithbard:us-east1:bard',
             'NAME': 'bard',
-            'USER': 'bard',
+            'USER': 'postgres',
             'PASSWORD': 'bard1234django',
             # 'HOST': '/cloudsql/bard',
             'PORT': '3306',
@@ -89,12 +91,12 @@ if os.getenv('GAE_APPLICATION', None):
 else:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'HOST': '127.0.0.1',
-            'PORT': '3306',
-            'NAME': 'bard',
-            'USER': 'root',
-            'PASSWORD': '',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'bard',
+        'USER': 'postgres',
+        'PASSWORD': 'bard1234django',
+        'HOST': 'localhost',
+        'PORT': '5432',
         }
     }
 
