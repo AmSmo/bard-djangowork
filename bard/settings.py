@@ -89,16 +89,16 @@ DATABASES = {
     }
 }
 # else:
-    DATABASES = {
-        'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'bard',
-        'USER': 'postgres',
-        'PASSWORD': 'bard1234django',
-        'HOST': 'localhost',
-        'PORT': '5432',
-        }
-    }
+#     DATABASES = {
+#         'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'bard',
+#         'USER': 'postgres',
+#         'PASSWORD': 'bard1234django',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+    #     }
+    # }
 
 
 # Password validation
