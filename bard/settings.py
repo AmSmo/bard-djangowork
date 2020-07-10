@@ -25,7 +25,7 @@ SECRET_KEY = '_&lc9ij7#n84=%r*qu_5zt=09q9bav1j94-_6n9!d&3*(+of3!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', "192.168.1.160",  "bardwithbard.ue.r.appspot.com", ]
+ALLOWED_HOSTS = ['localhost', "192.168.1.160",  "bardwithbard.ue.r.appspot.com", "nameless-cliffs-31057.herokuapp.com", ]
 
 
 # Application definition
