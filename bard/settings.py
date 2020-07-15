@@ -74,31 +74,31 @@ WSGI_APPLICATION = 'bard.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-# if os.getenv('GAE_APPLICATION', None):
-DATABASES = {
-    'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': 'db.sqlite3',
-        'ENGINE': 'django.db.backends.postgresql',
-        'HOST': '/cloudsql/bardwithbard:us-east1:bardwithbard',
-        'NAME': 'bardwithbard',
-        'USER': 'bard',
-        'PASSWORD': 'bard1234django',
-        # 'HOST': '/cloudsql/bard',
-        'PORT': '5432',
+if os.getenv('GAE_APPLICATION', None):
+    DATABASES = {
+        'default': {
+            # 'ENGINE': 'django.db.backends.sqlite3',
+            # 'NAME': 'db.sqlite3',
+            'ENGINE': 'django.db.backends.postgresql',
+            'HOST': '/cloudsql/bardwithbard:us-east1:bardwithbard',
+            'NAME': 'bardwithbard',
+            'USER': 'bard',
+            'PASSWORD': 'bard1234django',
+            # 'HOST': '/cloudsql/bard',
+            'PORT': '5432',
+        }
     }
-}
-# else:
-#     DATABASES = {
-#         'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'bard',
-#         'USER': 'postgres',
-#         'PASSWORD': 'bard1234django',
-#         'HOST': 'localhost',
-#         'PORT': '5432',
-    #     }
-    # }
+else:
+    DATABASES = {
+        'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'bard',
+        'USER': 'postgres',
+        'PASSWORD': 'bard1234django',
+        'HOST': 'localhost',
+        'PORT': '5432',
+        }
+    }
 
 
 # Password validation
