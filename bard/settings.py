@@ -82,7 +82,7 @@ if os.getenv('GAE_APPLICATION', None):
             'ENGINE': 'django.db.backends.postgresql',
             'HOST': '/cloudsql/bardwithbard:us-east1:bardwithbard',
             'NAME': 'bardwithbard',
-            'USER': 'bard',
+            'USER': 'bardwithbard',
             'PASSWORD': 'bard1234django',
             # 'HOST': '/cloudsql/bard',
             'PORT': '5432',
