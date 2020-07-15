@@ -101,8 +101,8 @@ def answer(request):
             game_on.new_plnouns(plnouns)
             original = game_on.original
             clean_form = Markup(game_on.edited.replace("\n", "<br />"))
-            llama = game_on.read_it_to_me().save('tmp/temp.wav')
-        return render(request, 'madlibs/answer.html', {'duh': original, 'content': clean_form, 'dictionary':unclean, 'file': llama})
+            # llama = game_on.read_it_to_me().save('tmp/temp.wav')
+        return render(request, 'madlibs/answer.html', {'duh': original, 'content': clean_form, 'dictionary':unclean}) # , 'file': llama
 
 def about(request):
     return render(request, 'madlibs/about.html')
