@@ -88,7 +88,6 @@ if os.getenv('GAE_APPLICATION', None):
             'PORT': '5432',
         }
     }
-    ###
 else:
     DATABASES = {
         'default': {
