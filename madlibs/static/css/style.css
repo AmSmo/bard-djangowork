@@ -453,3 +453,7 @@ body {
 #hidden {
     display:none;
 }
+
+.controls {
+    margin-bottom: 30px;
+}
