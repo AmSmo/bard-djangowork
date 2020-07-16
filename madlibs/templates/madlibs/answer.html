@@ -51,6 +51,20 @@ speechSynthesis.cancel();
 pause = false;
 }
 
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
 </script>
 
 
@@ -58,15 +72,15 @@ pause = false;
 
 <div class="content">
     <div id="marlib"><h6>{{ content }}</h6><br></div>
-   <div class ="original">
-       <h6> Original sonnet:<br><br>
-
-        {{ duh }}
-        </h6>
+   <button type="button" class="original">
+        Original sonnet:
+       </button>
+    <div class="innards">
+       <h6> {{ duh }} </h6>
    </div>
     <div class="controls">
-        <button onclick="say()" class="play">Read the MarLib</button>
-        <button onclick="paused()" class="stop"> PAUSE!</button>
+        <button onclick="say()" class="play">Read</button>
+        <button onclick="paused()" class="pause"> PAUSE!</button>
         <button onclick="stop()" class="stop">STOP!</button>
     </div>
 </div>

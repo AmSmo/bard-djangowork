@@ -1,4 +1,5 @@
-/* Nav Bar */
+/* Nav Bar this one*/
+
 body,
 html {
     margin: 0;
@@ -383,7 +384,6 @@ body {
     bottom: 0px;
     left: 0px;
     right: 0px;
-    padding-top:30px;
     margin-top:20px;
 }
 
@@ -456,5 +456,53 @@ body {
 }
 
 .controls {
-    margin-bottom: 30px;
+    padding: 30px;
+}
+.play,
+.stop,
+.pause {
+    border-radius: 5px;
+    height: 36px;
+    width: 200px;
+    font-family: cursive;
+    font-size: 22px;
+    background-color: burlywood;
+    box-shadow: #5d3418;
+    border: 1px solid  #5d3418;
+    margin-bottom: 20px;
+    justify-content: center;
+    padding-top:0px;
+    box-shadow: 5px 10px #888888;}
+
+.play:hover,
+.stop:hover,
+.pause:hover{
+color: #6b3c02;
+    font-size: 20px;
+    animation-direction: alternate;
+    transition: all 200ms ease-in 10ms;
+    margin-bottom: 18px;
+}
+
+.original {
+      background-color: #777;
+      color: white;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+}
+
+.innards {
+      padding: 0 18px;
+      display: none;
+      overflow: hidden;
+      background-color: #f1f1f1;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
 }
