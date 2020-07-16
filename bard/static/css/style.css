@@ -1,4 +1,5 @@
-/* Nav Bar */
+/* Nav Bar this one*/
+
 body,
 html {
     margin: 0;
@@ -83,6 +84,10 @@ nav img:hover {
     nav{
         padding-top:1px;
 
+    }
+
+    wrap-collapsible{
+        width:700px;
     }
     nav .left,
     nav .right {
@@ -213,6 +218,10 @@ body {
 
     }
 
+    wrap-collapsible{
+        width:450px;
+    }
+
     .main {
         top:112 px;
         padding: 0 8px;
@@ -279,6 +288,10 @@ body {
     .main{
         top:72px;
         padding: 3px;
+    }
+
+    .wrap-collapsible{
+        width: 370px;
     }
     .explanation {
         font-size: 1rem;
@@ -371,7 +384,7 @@ body {
 }
 
 #footer {
-    background-color: blue;/* #EBD5B3; */
+    background-color: #EBD5B3;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: 900;
     color: #303030;
@@ -384,7 +397,6 @@ body {
     left: 0px;
     right: 0px;
     margin-top:20px;
-    padding-top:50px;
 }
 
 .escape {
@@ -456,6 +468,108 @@ body {
 }
 
 .controls {
-    margin-bottom: 60px;
-    padding-bottom: 30px;
+    padding: 30px;
+}
+.play,
+.stop,
+.pause {
+    border-radius: 5px;
+    height: 36px;
+    width: 200px;
+    font-family: cursive;
+    font-size: 22px;
+    background-color: burlywood;
+    box-shadow: #5d3418;
+    border: 1px solid  #5d3418;
+    margin-bottom: 20px;
+    justify-content: center;
+    padding-top:0px;
+    box-shadow: 5px 10px #888888;}
+
+.play:hover,
+.stop:hover,
+.pause:hover{
+color: #6b3c02;
+    font-size: 20px;
+    animation-direction: alternate;
+    transition: all 200ms ease-in 10ms;
+    margin-bottom: 18px;
+}
+
+
+
+/* collapsible wrapper */
+.wrap-collabsible {
+    max-width: 500px;
+    justify-content:center;
+    margin-bottom: 1.2rem 0;
+}
+
+input[type='checkbox'] {
+  display: none;
+}
+
+.lbl-toggle {
+  display: block;
+
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  text-align: center;
+
+  padding: 1rem;
+  color: black;
+  background: burlywood;
+  opacity: 0.8;
+
+  cursor: pointer;
+
+  border-radius: 7px;
+  transition: all 0.25s ease-out;
+}
+
+.lbl-toggle:hover {
+  color: #7C5A0B;
+}
+
+.lbl-toggle::before {
+  content: ' ';
+  display: inline-block;
+
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid currentColor;
+  vertical-align: middle;
+  margin-right: .7rem;
+  transform: translateY(-2px);
+
+  transition: transform .2s ease-out;
+}
+
+.toggle:checked + .lbl-toggle::before {
+  transform: rotate(90deg) translateX(-3px);
+}
+
+.collapsible-content {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height .25s ease-in-out;
+}
+
+.toggle:checked + .lbl-toggle + .collapsible-content {
+  max-height: 100vh;
+}
+
+.toggle:checked + .lbl-toggle {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.collapsible-content .content-inner {
+  background: rgba(250, 224, 66, .2);
+  border-bottom: 1px solid rgba(250, 224, 66, .45);
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  padding: .5rem 1rem;
+  margin-bottom: 20px;
 }
