@@ -4,15 +4,72 @@
 
 
   {% csrf_token %}
-    <h6>{{ content }}</h6><br>
-    <h6> Working data uncleaned:<br><br>
+<script>
+
+var longSonnet = {{ read }};
+
+var utterance = new SpeechSynthesisUtterance(longSonnet);
+
+
+function voiced(){
+return speechSynthesis.getVoices();
+}
+let voices = voiced();
+
+
+
+if (voices.length < 1){let voices = speechSynthesis.getVoices();}
+if (voices.length < 1){let voices = speechSynthesis.getVoices();}
+utterance.voice = voices[37];
+if (voices.length>1){
+utterance.rate = .78;
+}else{
+utterance.rate = .88;
+utterance.pitch = 1.12}
+let pause = false;
+
+function say() {
+
+if (pause == true) {
+speechSynthesis.resume();
+
+
+}
+
+else{
+speechSynthesis.speak(utterance);
+}
+}
+
+function paused() {
+pause = true;
+speechSynthesis.pause()
+}
+
+function stop() {
+speechSynthesis.cancel();
+pause = false;
+}
+
+</script>
+
+
+
+
+<div class="content">
+    <div id="marlib"><h6>{{ content }}</h6><br></div>
+   <div class ="original">
+       <h6> Original sonnet:<br><br>
 
         {{ duh }}
-    </h6>
-
-
-<!--    <audio src="../../tmp/temp.wav" controls></audio>-->
-
+        </h6>
+   </div>
+    <div class="controls">
+        <button onclick="say()" class="play">Read the MarLib</button>
+        <button onclick="paused()" class="stop"> PAUSE!</button>
+        <button onclick="stop()" class="stop">STOP!</button>
+    </div>
+</div>
 
 
 {% endblock %}

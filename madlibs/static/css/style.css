@@ -23,7 +23,7 @@ header {
     z-index: 2;
     margin:0;
     opacity: .9;
-    
+
 }
 
 nav {
@@ -33,9 +33,9 @@ nav {
     width:auto;
     justify-content: space-around;
     align-items: center;
-    
+
 }
- 
+
 
 nav img {
 align-content: center;
@@ -53,7 +53,7 @@ padding-top: 1px;
 nav .left,
 nav .right {
     padding-top:15px;
-    display: flex; 
+    display: flex;
     align-items: center;
     justify-content: space-around;
     line-height: 22px;
@@ -82,7 +82,7 @@ nav img:hover {
 @media only screen and (max-width:900px){
     nav{
         padding-top:1px;
-        
+
     }
     nav .left,
     nav .right {
@@ -108,7 +108,7 @@ nav img:hover {
         height: 60px;
         vertical-align: bottom;
         padding: 20px 10px 0px 10px;
-        
+
     }
 
     .desktop {
@@ -128,13 +128,13 @@ body {
     font-family: cursive;
     top: 120px;
     color:#282828;
-    text-align: center; 
+    text-align: center;
     display: block;
     padding-bottom: 10px;
     min-height:100%;
     padding: 0 20px;
-    
-    
+
+
 }
 
 .explanation {
@@ -181,24 +181,24 @@ body {
     font-size: 25px;
     max-width: 100%;
     width: auto;
-    padding-top:20px;      
+    padding-top:20px;
 }
 
 @media only screen and (max-width:900px){
     .title {
         font-size:1.75rem;
-        
+
     }
 
     .main {
         top:96px;
         display: block;
-        
+
     }
 
     .container {
         height: 410px;
-        
+
     }
 
     .globe {
@@ -210,7 +210,7 @@ body {
     .title {
         font-size:1.75rem;
         padding-top: 25px;
-        
+
     }
 
     .main {
@@ -221,7 +221,7 @@ body {
 
     .container {
         height: auto;
-        
+
     }
 
     .globe {
@@ -230,7 +230,7 @@ body {
 
     nav{
         padding-top:1px;
-        
+
     }
     nav .left,
     nav .right {
@@ -256,13 +256,13 @@ body {
         height: 60px;
         vertical-align: bottom;
         padding: 20px 5px 0px 5px;
-        
+
     }
 
     .desktop {
         width:200px;
     }
-    
+
     .shakes {
         padding: 0 0;
         width: 95px;
@@ -270,7 +270,7 @@ body {
     }
     .explanation {
         font-size: 1.4rem;
-        
+
 }
 }
 
@@ -297,7 +297,7 @@ body {
     .shakes {
         display:none;
     }
-    
+
     .title{
         font-size: 22px;
     }
@@ -305,7 +305,7 @@ body {
 
 .main h6 {
     font-size: 2rem;
-    
+
 }
 
 .special{
@@ -325,7 +325,7 @@ body {
     font-style: italic, bold;
     display: flex;
     width:100%;
-   
+
 }
 
 .main h3 {
@@ -402,7 +402,7 @@ body {
     list-style-position: inside;
     list-style-type: disc;
     justify-self: left;
-    text-align: left;   
+    text-align: left;
 }
 
 .why {
@@ -420,7 +420,7 @@ body {
     font-size: 1.5rem;
     list-style-position: inside;
     list-style: decimal;
-    justify-self: left; 
+    justify-self: left;
     text-align: left;
     padding-left: 5rem;
 }
@@ -441,7 +441,7 @@ body {
     width: 100%;
     display: block;
     font-size: 1.3rem;
-    
+
 }
 
 #crayon {

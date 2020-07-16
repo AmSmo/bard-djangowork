@@ -19,29 +19,29 @@ class GameForm(forms.Form):
         if categories:
             for i in range(0, categories[0]):
                 j=i+1
-                self.fields["noun_%d" % j] = forms.CharField(max_length=15, label=("Noun "+ str(j)+":"), initial=("noun_%d" % j))
+                self.fields["noun_%d" % j] = forms.CharField(max_length=15, label=("Noun "+ str(j)+":"))
                 self.fields["noun_%d" % j].widget.attrs.update({'class': 'special'})
 
             for i in range(0, categories[1]):
                 j = i + 1
-                self.fields["verb_%d" % j] = forms.CharField(max_length=15, label=("Verb "+ str(j)+":"), initial=("verb_%d" % j))
+                self.fields["verb_%d" % j] = forms.CharField(max_length=15, label=("Verb "+ str(j)+":"))
                 self.fields["verb_%d" % j].widget.attrs.update({'class': 'special verb'})
             for i in range(0, categories[2]):
                 j = i + 1
-                self.fields["adverb_%d" % j] = forms.CharField(max_length=15, label=("Adverb "+ str(j)+":"), initial=("adverb%d" % j))
+                self.fields["adverb_%d" % j] = forms.CharField(max_length=15, label=("Adverb "+ str(j)+":"))
                 self.fields["adverb_%d" % j].widget.attrs.update({'class': 'special adverb'})
 
             for i in range(0, categories[3]):
                 j = i + 1
-                self.fields["adjective_%d" % j] = forms.CharField(max_length=15, label=("Adjective "+ str(j)+":"), initial=("adjective%d" % j))
+                self.fields["adjective_%d" % j] = forms.CharField(max_length=15, label=("Adjective "+ str(j)+":"))
                 self.fields["adjective_%d" % j].widget.attrs.update({'class': 'special adjective'})
             for i in range(0, categories[4]):
                 j = i + 1
-                self.fields["ptverb_%d" % j] = forms.CharField(max_length=15, label=("Past Tense Verb "+ str(j)+":"), initial=("verbed%d" % j))
+                self.fields["ptverb_%d" % j] = forms.CharField(max_length=15, label=("Past Tense Verb "+ str(j)+":"))
                 self.fields["ptverb_%d" % j].widget.attrs.update({'class': 'special verbed'})
             for i in range(0, categories[5]):
                 j = i + 1
-                self.fields["plnoun_%d" % j] = forms.CharField(max_length=15, label=("Plural Noun "+ str(j)+":"), initial=("plnoun%d" % j))
+                self.fields["plnoun_%d" % j] = forms.CharField(max_length=15, label=("Plural Noun "+ str(j)+":"))
                 self.fields["plnoun_%d" % j].widget.attrs.update({'class': 'special'})
 
     def nouns(self):
