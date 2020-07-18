@@ -11,7 +11,8 @@ urlpatterns = [
     path(r'sonnet/<int:id>', madlibs.views.sonnet, name="sonnet"),
     path('play/', madlibs.views.play, name="play"),
     path('play/answer/', madlibs.views.answer, name="answer"),
-    path('about/', madlibs.views.about, name="about")
+    path('about/', madlibs.views.about, name="about"),
+    path('find', madlibs.views.find, name="find")
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

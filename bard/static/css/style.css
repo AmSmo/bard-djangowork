@@ -10,6 +10,9 @@ body {
     position: relative;
 }
 
+
+
+
 header {
     background-color: #EBD5B3;
     font-family: Zapfino, "Clicker Script", cursive;
@@ -26,6 +29,7 @@ header {
     opacity: .9;
 
 }
+
 
 nav {
     height:62px;

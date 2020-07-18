@@ -104,6 +104,23 @@ def answer(request):
             no_quotes = game_on.edited.replace("'", "")
             read = Markup("'" + no_quotes.replace("\n", " ") + "'")
         return render(request, 'madlibs/answer.html', {'duh': original, 'content': clean_form, 'dictionary':unclean, 'read': read}) # , 'file': llama
+    else:
+        forms = ChooseForm()
+        note = "You can't go back sadly... still working on that"
+        return render(request, 'madlibs/play.html', {'gameform': forms, 'note': note})
 
 def about(request):
     return render(request, 'madlibs/about.html')
+
+def find(request):
+    return render(request, 'madlibs/find.html', {'section_1': range(1,15),
+                                                 'section_2': range(15,29),
+                                                 'section_3': range(29,43),
+                                                 'section_4': range(43,57),
+                                                 'section_5': range(57,71),
+                                                 'section_6': range(71,85),
+                                                 'section_7': range(85,99),
+                                                 'section_8': range(99,113),
+                                                 'section_9': range(113,127),
+                                                 'section_10': range(127,141),
+                                                 'section_11': range(141,155)})

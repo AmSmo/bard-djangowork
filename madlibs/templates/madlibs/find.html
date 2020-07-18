@@ -1,0 +1,129 @@
+{% extends 'madlibs/base.html' %}
+{% block 'body' %}
+{% load static %}
+<div class="all_section">
+
+ <div class="dropdown">
+  <button class="dropbtn">I - XIV</button>
+  <div class="dropdown-content">
+    <div class="section">
+        {% for i in section_1 %}
+            <h6><a href="{% url 'sonnet' id=i %}">Sonnet {{ i }}</h6>
+        {% endfor %}
+    </div>
+  </div>
+</div>
+
+<div class="dropdown">
+  <button class="dropbtn">XV - XXVIII</button>
+  <div class="dropdown-content">
+    <div class="section">
+        {% for i in section_2 %}
+            <h6><a href="{% url 'sonnet' id=i %}">Sonnet {{ i }}</h6>
+        {% endfor %}
+    </div>
+  </div>
+</div>
+
+     <div class="dropdown">
+  <button class="dropbtn">XXIX - XLII</button>
+  <div class="dropdown-content">
+    <div class="section">
+        {% for i in section_3 %}
+            <h6><a href="{% url 'sonnet' id=i %}">Sonnet {{ i }}</h6>
+        {% endfor %}
+    </div>
+  </div>
+</div>
+
+<div class="dropdown">
+  <button class="dropbtn">XLIII - LVI</button>
+  <div class="dropdown-content">
+    <div class="section">
+        {% for i in section_4 %}
+            <h6><a href="{% url 'sonnet' id=i %}">Sonnet {{ i }}</h6>
+        {% endfor %}
+    </div>
+  </div>
+</div>
+
+    <div class="dropdown">
+  <button class="dropbtn">XLVII - LXX</button>
+  <div class="dropdown-content">
+    <div class="section">
+        {% for i in section_5 %}
+            <h6><a href="{% url 'sonnet' id=i %}">Sonnet {{ i }}</h6>
+        {% endfor %}
+    </div>
+ </div>
+</div>
+
+    <div class="dropdown">
+  <button class="dropbtn">LXXI - LXXXIV</button>
+  <div class="dropdown-content">
+    <div class="section">
+        {% for i in section_6 %}
+            <h6><a href="{% url 'sonnet' id=i %}">Sonnet {{ i }}</h6>
+        {% endfor %}
+    </div>
+       </div>
+</div>
+ <div class="dropdown">
+  <button class="dropbtn">LXXXV - XCVIII</button>
+  <div class="dropdown-content">
+<div class="section">
+        {% for i in section_7 %}
+            <h6><a href="{% url 'sonnet' id=i %}">Sonnet {{ i }}</h6>
+        {% endfor %}
+    </div>
+  </div>
+ </div>
+
+     <div class="dropdown">
+  <button class="dropbtn">XCIX - CXII</button>
+  <div class="dropdown-content">
+    <div class="section">
+        {% for i in section_8 %}
+            <h6><a href="{% url 'sonnet' id=i %}">Sonnet {{ i }}</h6>
+        {% endfor %}
+    </div>
+  </div>
+     </div>
+
+
+       <div class="dropdown">
+  <button class="dropbtn">CXIII - CXXVI</button>
+  <div class="dropdown-content">
+    <div class="section">
+        {% for i in section_9 %}
+            <h6><a href="{% url 'sonnet' id=i %}">Sonnet {{ i }}</h6>
+        {% endfor %}
+    </div>
+  </div>
+       </div>
+
+
+       <div class="dropdown">
+  <button class="dropbtn">CXXVI - CXL</button>
+  <div class="dropdown-content">
+    <div class="section">
+        {% for i in section_10 %}
+            <h6><a href="{% url 'sonnet' id=i %}">Sonnet {{ i }}</h6>
+        {% endfor %}
+    </div>
+  </div>
+       </div>
+
+       <div class="dropdown">
+  <button class="dropbtn">CXLI - CLIV</button>
+  <div class="dropdown-content">
+    <div class="section">
+        {% for i in section_11 %}
+            <h6><a href="{% url 'sonnet' id=i %}">Sonnet {{ i }}</h6>
+        {% endfor %}
+    </div>
+  </div>
+       </div>
+</div>
+
+{% endblock %}
