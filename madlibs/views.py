@@ -28,9 +28,9 @@ def sonnet(request, id):
 
     try:
         mp3= BW.WordSearch(id)
-        mp3.read_it_to_me()
-
-        return render(request,  'madlibs/marlib.html', {'content': Markup(mp3.edited.replace("\n", "<br /> \n"))})
+        no_quotes = mp3.edited.replace("'", "")
+        read = Markup("'" + no_quotes.replace("\n", " ") + "'")
+        return render(request,  'madlibs/marlib.html', {'content': Markup(mp3.edited.replace("\n", "<br /> \n")), 'read':read})
     except:
         raise Http404('Sonnet not found, try a number from 1-154')
 

@@ -8,6 +8,7 @@ html {
 }
 body {
     position: relative;
+
 }
 
 
@@ -576,4 +577,10 @@ input[type='checkbox'] {
   border-bottom-right-radius: 7px;
   padding: .5rem 1rem;
   margin-bottom: 20px;
+}
+
+.edition {
+    max-height: 450px;
+    padding-top: 30px;
+    width: auto;
 }

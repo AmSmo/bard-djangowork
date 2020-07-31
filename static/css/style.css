@@ -217,7 +217,10 @@ body {
         padding-top: 25px;
 
     }
-
+    .edition {
+      max-width: 430px;
+      height:auto;
+    }
     wrap-collapsible{
         width:450px;
     }
@@ -289,7 +292,10 @@ body {
         top:72px;
         padding: 3px;
     }
-
+    .edition{
+      max-width: 320px;
+      height:auto
+    }
     .wrap-collapsible{
         width: 370px;
     }
@@ -573,3 +579,80 @@ input[type='checkbox'] {
   padding: .5rem 1rem;
   margin-bottom: 20px;
 }
+
+.all_section {
+    justify-content: center;
+    display: inline-flex;
+    flex-wrap:wrap;
+}
+
+.section {
+    min-width: 220px;
+    padding: 0 20px;
+}
+
+
+.dropbtn {
+    background-color: burlywood;
+    min-width: 220px;
+    padding: 6px 10px;
+    font-size: 29px;
+    font-family: cursive;
+    border-radius: 12px;
+    margin: 4px 20px;
+
+}
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+}
+
+.dropdown-content {
+  display: none;
+  max-width: 220px;
+  position: absolute;
+  background-color: #f1f1f1;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 8px;*/
+
+  opacity: .8;
+
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  padding: .5rem 1rem;
+
+}
+
+.dropdown-content a {
+  color: black;
+  font-size: 25px;
+  padding-top: 3px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  padding-left: 18%;
+}
+
+.edition {
+    max-height: 450px;
+    padding-top: 30px;
+    width: auto;
+}
+
+.dropdown-content a:hover {
+    color: #6b3c02;
+    font-size: 28px;
+    animation-direction: alternate;
+    transition: all 200ms ease-in 10ms;
+
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    z-index: 2;
+    }
+
+.dropdown:hover .dropbtn {background-color: burlywood;}

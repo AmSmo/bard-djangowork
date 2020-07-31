@@ -1,13 +1,65 @@
 {% extends 'madlibs/base.html' %}
 {% block 'body' %}
 {% load static %}
+<script>
 
+var longSonnet = {{ read }};
+
+var utterance = new SpeechSynthesisUtterance(longSonnet);
+
+
+function voiced(){
+return speechSynthesis.getVoices();
+}
+let voices = voiced();
+
+
+
+if (voices.length < 1){let voices = speechSynthesis.getVoices();}
+if (voices.length < 1){let voices = speechSynthesis.getVoices();}
+utterance.voice = voices[37];
+if (voices.length>1){
+utterance.rate = .78;
+}else{
+utterance.rate = .82;
+utterance.pitch = 1.12}
+let pause = false;
+
+function say() {
+
+if (pause == true) {
+speechSynthesis.resume();
+
+
+}
+
+else{
+speechSynthesis.speak(utterance);
+}
+}
+
+function paused() {
+pause = true;
+speechSynthesis.pause()
+}
+
+function stop() {
+speechSynthesis.cancel();
+pause = false;
+}
+
+</script>
 
 
     <h6>{{ content }}</h6>
 
     {% csrf_token %}
-    <audio src="{{ file }}" controls></audio>
+
+     <div class="controls">
+        <button onclick="say()" class="play">Read/Resume</button>
+        <button onclick="paused()" class="pause"> PAUSE!</button>
+        <button onclick="stop()" class="stop">STOP!</button>
+    </div>
 
 
 {% endblock %}
